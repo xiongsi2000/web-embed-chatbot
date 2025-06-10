@@ -1,0 +1,56 @@
+{
+  "name": "web-embed-chatbot",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modern, customizable chatbot widget that can be easily embedded into any website. Supporting multiple AI models including DeepSeek and Gemini.",
+  "keywords": [
+    "chatbot",
+    "react",
+    "vite",
+    "deepseek",
+    "gemini",
+    "ai",
+    "widget",
+    "embed"
+  ],
+  "author": "xiongsi2000",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiongsi2000/web-embed-chatbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiongsi2000/web-embed-chatbot/issues"
+  },
+  "homepage": "https://github.com/xiongsi2000/web-embed-chatbot#readme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "openai": "^4.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "prettier": "^3.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^4.4.5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
