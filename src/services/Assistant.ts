@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, GenerateContentRequest } from "@google/generative-ai";
+import { companyInfo } from "../conpanyinfo";
 
 const DEEPSEEK_API_KEY = import.meta.env.VITE_DEEPSEEK_AI_API_KEY;
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -50,6 +51,9 @@ export class Assistant {
         const systemPrompt = {
           role: "system",
           parts: [{ text: `You are a professional Chatbot website support. Keep responses brief and concise.
+
+Company Information:
+${companyInfo}
 
 Guidelines:
 1. Use simple, clear language
@@ -117,9 +121,24 @@ Guidelines:
           throw new Error("DeepSeek API key is missing. Please add it to the .env file.");
         }
 
+        const systemMessage: OpenAI.Chat.ChatCompletionMessageParam = {
+          role: "system",
+          content: `You are a professional Chatbot website support. Keep responses brief and concise.
+
+Company Information:
+${companyInfo}
+
+Guidelines:
+1. Use simple, clear language
+2. Format information in a structured way
+3. Keep paragraphs short and well-spaced
+4. Use emojis sparingly to make text more engaging
+5. Focus on essential information only`
+        };
+
         const result = await (this.#client as OpenAI).chat.completions.create({
           model: this.#model,
-          messages: [...history, { content, role: "user" }],
+          messages: [systemMessage, ...history, { content, role: "user" }],
         });
 
         const responseContent = result.choices[0]?.message?.content;

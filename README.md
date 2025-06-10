@@ -2,6 +2,10 @@
 
 A modern, customizable chatbot widget that can be easily embedded into any website. Built with React and Vite, supporting multiple AI models including DeepSeek and Gemini.
 
+## Demo
+
+![Chatbot Demo](demo.gif)
+
 ## Features
 
 - 🎨 Modern and clean UI design
